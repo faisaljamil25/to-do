@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  --bgcolor1: #22ff77;
+  --bgcolor2: #17609c;
+  --color: #00bbbb;
+}
+
+body {
+  background-image: linear-gradient(
+    120deg,
+    var(--bgcolor1) 0%,
+    var(--bgcolor2) 100%
+  );
+  background-repeat: no-repeat;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 3.2rem;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-div {
+  background: white;
+}
+
+form input,
+form button {
+  padding: 1rem;
+  font-size: 2.4rem;
+  border: none;
+  outline: none;
+}
+
+form button {
+  color: var(--color);
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: var(--color);
+  color: white;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.8rem;
+  background: white;
+  font-size: 2.4rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+.todo-item {
+  padding: 0rem 1rem;
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: var(--color);
+  color: white;
+  border: none;
+  padding: 1.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.complete-btn {
+  background: var(--bgcolor1);
+}
+
+.trash-btn:hover {
+  color: var(--color);
+  background: white;
+}
+.complete-btn:hover {
+  color: var(--color);
+  background: white;
+}
+
+.fa-check,
+.fa-trash {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.filter-todo {
+  padding: 1rem;
+}
+
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  min-width: 12rem;
+}
+select {
+  color: var(--color);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.8rem;
+  background: var(--color);
+  cursor: pointer;
+  pointer-events: none;
+}
+/* Transition */
+
+.select:hover::after {
+  transform: scale(1.8);
+  background: white;
+  color: var(--color);
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+  header {
+    font-size: 2.8rem;
+  }
+  form {
+    flex-direction: column;
+  }
+  .todo-input {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  html {
+    font-size: 45%;
+  }
+}
